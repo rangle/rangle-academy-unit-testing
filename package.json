@@ -11,7 +11,9 @@
     "mocha": "^3.0.2"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register ./**/*.test.js"
+    "test": "mocha --compilers js:babel-core/register ./**/*.test.js",
+    "device-app": "node '02 - saving-time/index.js'",
+    "device-test": "mocha --compilers js:babel-core/register './02 - saving-time/*.test.js'"
   },
   "repository": {
     "type": "git",

@@ -153,7 +153,7 @@ describe('get all comments by user', ()=>{
       userName: 'Igor'
     }]
   })
-  
+
 })
 ```
 
@@ -165,3 +165,47 @@ Other ideas:
   * get user with most comments
   * etc
   * things that can be hard to verify with real data if the environment you have may not always have what is needed
+
+* test idea - given X set of rules and data from a sever, need to return a validation rules
+* ie: 'system health rules', if between N1-N2, N2-N3, N3-N4 then return good/critical/x
+* relying on manual testing: may not be able to recreate the data needed to hit each one
+
+- as a system admin, I would like to know which devices have a critical load
+- if CPU usage is between 0-30 - then good
+- if CPU usage is between 30-60 - then warning
+- if CPU usage is between 60 - 100 - then critical
+- these values may be configurable
+
+```js
+
+let config = {
+  GOOD: { min: 0, max: 30},
+  WARN: { min 30, max: 60},
+  CRITICAL: { min: 60, max: 100}
+}
+let rule = (config, value) => {
+  if(value > config.GOOD.min && value < config.GOOD.max) { return 'good '}
+  if(value > config.WARN.min && value < config.WARN.max) { return 'warn '}
+  if(value > config.CRITICAL.min && value < config.CRITICAL.max) { return 'critical '}
+}
+
+setInterval(()=>{
+  let result = rule(config,Math.random()*10);
+  console.log(result);
+},1000)
+describe('the device load health metric',()=> {
+  it('should return good, CPU usage is within the good threshold',() => {
+
+  })
+
+  it('should return warning if CPU usage is within the threshold',()=> {
+
+  })
+
+  it('should return warning if CPU usage is within the threshold',()=> {
+
+  })
+
+})
+
+```
