@@ -1,10 +1,10 @@
 # Saving Time (tbd duration)
 
-*Goal:* To reinforce the idea that unit testing is part of testing, and if done properly can save time instead of adding more time to completing a feature or fixing a bug.
-*Why:* A reason often given by developers for not doing tests, is because it slows down their development.
-*Secondary goal:* To demonstrate that unit tests can reduce the amount of time spent manual testing, and how it can be used to verify functionality that may be hard to verify in your development environment.
-*How:* * Discussion + Hands on
-*Materials:* * Git-book + exercise
+* *Goal:* To reinforce the idea that unit testing is part of testing, and if done properly can save time instead of adding more time to completing a feature or fixing a bug.
+* *Why:* A reason often given by developers for not doing tests, is because it slows down their development.
+* *Secondary goal:* To demonstrate that unit tests can reduce the amount of time spent manual testing, and how it can be used to verify functionality that may be hard to verify in your development environment.
+* *How:* * Discussion + Hands on
+* *Materials:* * Git-book + exercise
 
 
 * Fixing a bug broke a previously working feature
@@ -126,7 +126,7 @@ This is an application a SAS, where a system user can manage many clients. Some 
 
 In addition to the previously identified rules, there is a new `isSystemClient`, if true - the user must permission object must have an isSystemClient flag set to true + all other rules must still apply. If isSystemClient is set to false and/or not provided - it has no impact.
 
-### Activity 
+### Activity
 
 * Maybe just discussion?
 
