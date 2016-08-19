@@ -11,7 +11,8 @@
     "mocha": "^3.0.2"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register ./**/*.test.js"
+    "test": "mocha --compilers js:babel-core/register ./**/*.test.js",
+    "test:03:watch": "mocha --compilers js:babel-core/register --watch './03 - tests-for-better-code/**/*.test.js'"
   },
   "repository": {
     "type": "git",

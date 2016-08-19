@@ -1,14 +1,18 @@
 // IRL I get data from a DB or some external system.
 export class DB {
   getArtists() {
-    throw new Error("I am en external thing that will blow up during testing.");
+    this._blowup();
   }
 
   getAlbums() {
-    throw new Error("I am en external thing that will blow up during testing.");
+    this._blowup();
   }
 
   getTracks() {
-    throw new Error("I am en external thing that will blow up during testing.");
+    this._blowup();
+  }
+
+  _blowup() {
+    throw new Error("I am an external thing that will blow up during testing.");
   }
 }
