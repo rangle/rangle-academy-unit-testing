@@ -28,18 +28,18 @@ export class AlbumService {
   getAlbums() {
     let results = [];
 
-    if (!this.currentArtist) {
-      for (let i=0; i < this.getAlbums.length; ++i) {
+    if (!this.currentArtistName) {
+      for (let i=0; i < this.albums.length; ++i) {
         results.push(this.albums[i].title);
       }
 
-      return result;
+      return results;
     }
     else {
-      let artistId = _getArtistId();
+      let artistId = this._getArtistId();
 
       for (let i = 0; i < this.albums.length; ++i) {
-        if (this.albums.artistId === artistId) {
+        if (this.albums[i].artistId === artistId) {
           results.push(this.albums[i].title);
         }
       }
@@ -52,7 +52,7 @@ export class AlbumService {
    * Gets a list of track titles for the selected artist and album.
    * If no album is seleted, gets all track titles for the artist.
    * If no artist is selected, gets all track titles for the album.
-   * If nothing is selected, gets all trak titles in the DB.
+   * If nothing is selected, gets all track titles in the DB.
    */
   getTracks() {
     let results = [];
@@ -90,28 +90,28 @@ export class AlbumService {
     return results;
   }
 
-  _selectArtistId() {
+  _getArtistId() {
     if (!this.currentArtistName) {
       throw new Error('No artist selected');
     }
 
     for (let i = 0; i < this.artists.length; ++i) {
       if (this.currentArtistName === this.artists[i].name) {
-        return this.artists[i].id;
+        return this.artists[i].artistId;
       }
     }
 
     throw new Error('Artist not found');
   }
 
-  _selectAlbumId() {
+  _getAlbumId() {
     if (!this.currentAlbumName) {
       throw new Error('No album selected');
     }
 
     for (let i = 0; i < this.albums.length; ++i) {
       if (this.currentAlbumName === this.albums[i].name) {
-        return this.albums[i].id;
+        return this.albums[i].albumId;
       }
     }
 
