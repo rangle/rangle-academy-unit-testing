@@ -13,11 +13,11 @@
 
 ---
 
-## Task 0 
+## Task 0
 #### 5 minutes
 
-- Take a sticky note 
-- Write a down one of the following: 
+- Take a sticky note
+- Write a down one of the following:
 	- Why you don't write tests
 	- What challenges / questions you have when it comes to unit testing
 
@@ -103,7 +103,7 @@ describe('utils', () => {
     it('should reverse a string', () => {
 	  const expected = 'cba'; // Arrange
    	  const actual = utils.reverseString('abc'); // Act
-   	  
+
    	  expect(actual).to.equal(expected); // Assert
     });
   });
@@ -164,7 +164,7 @@ describe('My new feature', () => {
 	it('should return the provided string, but in reverse', () => {
 	  const expected = 'cba';
    	  const actual = utils.reverseString('abc');
-   	  
+
    	  expect(actual).to.equal(expected);
 	});
 }));
@@ -177,7 +177,7 @@ describe('My new feature', () => {
 - Equal answers two of the most important questions...
 	- What is the actual output?
 	- What is the expected output?
-	
+
 ^ If you write a test that does not answer both of those questions, you don't have a solid unit test
 We prefer equal because it is dead simple, and will result in readable, documented test cases
 
@@ -198,11 +198,11 @@ We prefer equal because it is dead simple, and will result in readable, document
 	- Approaches to Writing Unit Test Cases
 	- General Techniques
 		- Normal Conditions
-		- Unexpected Conditions	
+		- Unexpected Conditions
 	- Test Coverage
 	- Statement vs. Branch vs. Path Coverage
 	- Behavior vs. Implementation
-	
+
 ---
 
 # Thinking Like a Tester
@@ -226,9 +226,9 @@ We prefer equal because it is dead simple, and will result in readable, document
 ```
     it('should reverse a string', () => {
 	  const input = 'abc';
-	
+
    	  const result = utils.reverseString(input);
-   	  
+
    	  expect(result).to.equal('cba');
     });
 ```
@@ -246,9 +246,9 @@ We prefer equal because it is dead simple, and will result in readable, document
 ```
     it('should reverse a string', () => {
 	  const input = null;
-	
+
    	  const result = utils.reverseString(input);
-   	  
+
    	  expect(result).to.equal(???);
     });
 ```
@@ -265,19 +265,19 @@ We prefer equal because it is dead simple, and will result in readable, document
     it('should allow a number between 0 - 9', () => {
 	  const input = 0;
    	  const result = onChange(input);
-   	  
+
    	  expect(result).to.equal(0);
     });
-    
+
     it('should not allow a number less than 0', () => {
 	  const input = -1; // Below boundary value
-	  	  
+
    	  expect(onChange(input)).to.throw('Invalid Number');
     });
-    
+
     it('should not allow a number greater than 9', () => {
 	  const input = 10; // Above boundary value
-	  	  
+
    	  expect(onChange(input)).to.throw('Invalid Number');
     });
 ```
@@ -307,7 +307,7 @@ function returnInput(input, condition1, condition2, condition3) {
   if (condition1) { x++; }
   if (condition2) { x--; }
   if (condition3) { y = x; }
-  
+
   return y;
 }
 
@@ -349,7 +349,7 @@ function returnInput(input, condition1, condition2, condition3) {
   if (condition1) { x++; }
   if (condition2) { x--; }
   if (condition3) { y = x; }
-  
+
   return y;
 }
 
@@ -389,7 +389,7 @@ All files                      |    83.87 |    86.67 |       80 |    83.87 |    
 
 ```
 npm run coverage			// Run basic coverage output
-npm run coverage:check		// Run coverage threshold check 
+npm run coverage:check		// Run coverage threshold check
 npm run coverage:report		// Run coverage with detailed report
 ```
 
@@ -412,11 +412,6 @@ npm run coverage:report		// Run coverage with detailed report
 
 - Open `/unit-testing-workshop/exercises/01-thinking-like-a-tester`
 - `npm run tdd:01`
-- Write the required tests to test for:
-	- Expected inputs
-	- Unexpected inputs (bad inputs and boundaries)
-	- Try to accomplish a high coverage (`npm run coverage`)
-	- Consider how we can refactor this
 
 ---
 
@@ -481,8 +476,6 @@ npm run coverage:report		// Run coverage with detailed report
 
 - Open `/unit-testing-workshop/exercises/02-saving-time-mock-api`
 - `npm run tdd:02`
-- Step 1. Write the required tests to test for the selector
-- Step 2. Uncomment new response and modify the code to ensure your tests are passing
 
 ---
 
@@ -501,19 +494,15 @@ npm run coverage:report		// Run coverage with detailed report
 
 ## Task 3: Slaying Bugs (20mins)
 
-- Open `/unit-testing-workshop/exercises/03-saving-time-no-tests`
-- `node run.js` 
+- Open `/unit-testing-workshop/exercises/03-saving-time-bug`
+- `node run.js`
 - `npm run tdd:03`
-- Step 1. Without modifying the code
-	- Write the tests required to test the feature
-	- Write the failing test
-- Step 2. Fix the code
 
 ---
 
 ## Task 3: Review
 
-^ See how unit testing upfront would have found this issue immediately? Look how simple the output is, imagine if they was from an API and only occuring sometimes. Unit tests allow us to mock issues and pinpoint errors quickly
+^ See how unit testing upfront would have found this issue immediately? Look how simple the output is, imagine if they was from an API and only occuring sometimes. Unit tests allow us to mock issues and pin point errors quickly.
 
 ---
 
@@ -545,12 +534,8 @@ npm run coverage:report		// Run coverage with detailed report
 ## Task 4: Refactoring
 
 - Open `/unit-testing-workshop/exercises/04-tests-for-better-code`
-- `node run.js` 
+- `node run.js`
 - `npm run tdd:04`
-- 1. How would you write the following tests with the existing AlbumService?
-- 2. How can we adjust the API of AlbumService to make it easier to write these tests?
-- 3. Write the tests with the adjusted API
-- 4. Refactor the code while keeping the tests the same.
 
 ---
 
@@ -599,7 +584,7 @@ npm run coverage:report		// Run coverage with detailed report
 
 ## Behavior vs. Implementation
 
-- Where you want to test implementation details: 
+- Where you want to test implementation details:
 - Some specific detail that requires testing, e.g. reading from a cache rather than a datastore
 Should be less common
 

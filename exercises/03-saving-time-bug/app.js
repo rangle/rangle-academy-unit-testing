@@ -1,3 +1,18 @@
+/**
+ * Tasks:
+ *
+ * Step 0.
+ * - Run the app (node run.js) to see the issue (NULL value)
+ *
+ * Step 1.
+ * - Write the failing test
+ * - Fix the code
+ *
+ * Step 2.
+ * - Can we improve the code, make it more testable?
+ * - What other tests could we perform against this code?
+ */
+
 export const deviceHealth = (config, value) => {
   let level = 'NULL';
 

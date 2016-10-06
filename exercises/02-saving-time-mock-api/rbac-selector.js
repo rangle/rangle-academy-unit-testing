@@ -1,6 +1,19 @@
 import R from 'ramda';
 
 /**
+ * Tasks:
+ *
+ * Step 1.
+ * - Identify the happy & sad path, possible unexpected values
+ * - Write tests that provide 100% coverage
+ *
+ * Step 2.
+ * - Uncomment the `newResponse` and fix the code to work with it without
+ *   breaking any test
+ * - Can we improve the code?
+ */
+
+/**
  * Provided a userResponse object and a permissions object, will return
  * whether the provided user has all of the required permissions.
  *
