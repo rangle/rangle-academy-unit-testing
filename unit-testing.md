@@ -52,9 +52,9 @@
 
 ## What is a Unit Test?
 
-- Unit Tests: ensure system's components work in isolation
-- Integration Tests: ensure system's components collaborate as expected
-- Functional Tests: ensure system works from end user perspective
+- __Unit Tests__: ensure system's components work in isolation
+- __Integration Tests__: ensure system's components collaborate as expected
+- __Functional Tests__: ensure system works from end user perspective
 
 ---
 
@@ -71,20 +71,23 @@ function getUsersWithFirstName(name, users) {
 
 ---
 
-## Unit Test Requirements
+## A unit test...
 
-- Independent - should not depend on other tests
-- Repeatable - should not depend on the environment
-- Readable - should document behaviour and provide a bug report
-- Fast - should provide realtime developer feedback
+- __Independent__ - should not depend on other tests
+- __Repeatable__ - should not depend on the environment
+- __Readable__ - should document behaviour and provide a bug report
+- __Fast__ - should provide realtime developer feedback
+
+^ 1. No state that is passed and manipulated across multiple tests. 
+
 
 ---
 
 ## Unit Test Structure
 
-- Arrange all necessary preconditions and inputs.
-- Act on the object or method under test.
-- Assert that the expected results have occurred.
+- __Arrange__ all necessary preconditions and inputs.
+- __Act__ on the object or method under test.
+- __Assert__ that the expected results have occurred.
 
 ###### http://c2.com/cgi/wiki?ArrangeActAssert
 
@@ -96,6 +99,7 @@ function getUsersWithFirstName(name, users) {
 ```
 import { describe, it } from 'mocha';
 import { expect } from 'chai';
+
 import utils from 'utils';
 
 describe('utils', () => {
@@ -118,6 +122,12 @@ describe('utils', () => {
 - What should it do?
 - What was the output (actual behavior)?
 - What was the expected output (expected behavior)?
+
+---
+
+> Unit tests are not just QA. 
+> They also give you a clear objective and help you define requirements and design a better API. 
+> - Eric Elliot
 
 ---
 
@@ -425,6 +435,10 @@ npm run coverage:report		// Run coverage with detailed report
 
 ---
 
+> Doesn’t TDD slow you down and make you less creative?
+
+---
+
 ## Reasons for Not Testing
 
 - Too much time / effort
@@ -531,6 +545,22 @@ npm run coverage:report		// Run coverage with detailed report
 
 ---
 
+## Tests for Better Code
+
+- Unit tests work best for pure functions
+- Given the same input, always return the same output
+- Have no side-effects (no shared state, async, etc.)
+
+^ The more we write pure functions, the better off we are. We will notice our code is more readable, and more testable. 
+
+---
+
+## Mocking can be a code smell
+
+- If you have to do a lot of mocking to create a proper unit test, maybe that code doesn’t need unit tests at all.
+
+---
+
 ## Task 4: Refactoring
 
 - Open `/unit-testing-workshop/exercises/04-tests-for-better-code`
@@ -622,6 +652,70 @@ function getFirstNamesThatStartWith(people, letter) {
 
 - Not extremely difficult, but has several places for the code to fail
 - If code isn't testable, then its likely overly complex
+
+---
+
+# Test Driven Development
+
+---
+
+> Test Driven Development is not the same thing as unit tests. 
+> Unit tests are a type of test. TDD is a coding technique.
+> - James Sinclair
+
+---
+
+## How to TDD
+
+- Think about what you're trying to develop
+- Write a few failing tests based on your requirements
+- Write the required code
+- Fix the failing tests as required
+
+---
+
+## Where to TDD
+
+- React / Angular & Redux
+- Separation of concerns
+- Selectors, Thunks (or Sagas, or Observables), Reducers
+
+---
+
+## Why TDD
+
+- From a business prospective, TDD will...
+	- Improve developer productivity (long term)
+	- Reduce customer abandonment
+	- Increase the viral factor of your application
+	- Reduce the costs of customer service
+
+---
+
+## Benefits of TDD
+
+- Encourages you to try the obvious thing first and see if it works
+- Lets you think about expected & unexpected inputs
+- Helps sculpt a better API
+- Documents your code better
+
+^ When you are spending more time thinking about your code, you're thinking more about what will use it, and how
+
+
+---
+
+# Demo Time
+
+---
+
+# Further Reading
+
+- Eric Elliot - 5 Questions Every Unit Test Must Answer
+- https://medium.com/javascript-scene/what-every-unit-test-needs-f6cd34d9836d#.5chh0sx0b
+
+- James Sinclair - JAVASCRIPT TDD
+- http://jrsinclair.com/articles/2016/one-weird-trick-that-will-change-the-way-you-code-forever-javascript-tdd/
+
 
 ---
 
