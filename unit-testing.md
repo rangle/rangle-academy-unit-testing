@@ -704,10 +704,6 @@ function getFirstNamesThatStartWith(people, letter) {
 
 ---
 
-# Demo Time
-
----
-
 # Further Reading
 
 - Eric Elliot - 5 Questions Every Unit Test Must Answer
