@@ -385,6 +385,16 @@ All files                      |    83.87 |    86.67 |       80 |    83.87 |    
 
 ---
 
+# Coverage Demo
+
+```
+npm run coverage			// Run basic coverage output
+npm run coverage:check		// Run coverage threshold check 
+npm run coverage:report		// Run coverage with detailed report
+```
+
+---
+
 ### Coverage Overview
 
 - High % of Coverage != High Quality Tests
