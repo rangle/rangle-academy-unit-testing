@@ -416,6 +416,7 @@ npm run coverage:report		// Run coverage with detailed report
 	- Expected inputs
 	- Unexpected inputs (bad inputs and boundaries)
 	- Try to accomplish a high coverage (`npm run coverage`)
+	- Consider how we can refactor this
 
 ---
 
