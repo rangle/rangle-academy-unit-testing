@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:babel-core/register ./**/*.test.js",
-    "coverage": "node_modules/.bin/nyc --require babel-core/register node_modules/.bin/mocha --recursive './**/*.test.js'",
-    "tdd": "mocha --compilers js:babel-core/register ./**/*.test.js -w",
-    "tdd:01": "mocha --compilers js:babel-core/register ./exercises/01-thinking-like-a-tester/**/*.test.js -w",
-    "tdd:02": "mocha --compilers js:babel-core/register ./exercises/02-saving-time-mock-api/**/*.test.js -w",
-    "tdd:03": "mocha --compilers js:babel-core/register ./exercises/03-saving-time-no-tests/**/*.test.js -w",
-    "tdd:04": "mocha --compilers js:babel-core/register ./exercises/04-tests-for-better-code/**/*.test.js -w"
+    "test": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./**/*.test.js",
+    "coverage": "env NODE_ENV='test' node_modules/.bin/nyc --require babel-core/register node_modules/.bin/mocha --recursive './**/*.test.js'",
+    "tdd": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./**/*.test.js -w",
+    "tdd:01": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./exercises/01-thinking-like-a-tester/**/*.test.js -w",
+    "tdd:02": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./exercises/02-saving-time-mock-api/**/*.test.js -w",
+    "tdd:03": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./exercises/03-saving-time-no-tests/**/*.test.js -w",
+    "tdd:04": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./exercises/04-tests-for-better-code/**/*.test.js -w"
   },
   "dependencies": {
+    "babel-plugin-istanbul": "^2.0.1",
     "ramda": "^0.22.1"
   },
   "devDependencies": {
