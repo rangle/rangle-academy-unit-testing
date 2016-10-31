@@ -1,5 +1,9 @@
 # Effective Unit Testing
-### Welcome
+
+```
+git clone https://github.com/rangle/rangle-academy-unit-testing
+npm install
+```
 
 ---
 
