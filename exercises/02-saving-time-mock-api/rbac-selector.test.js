@@ -4,6 +4,8 @@ import rbacSelector from './rbac-selector';
 
 describe('02-saving-time', () => {
   context('rbacSelector: ', function() {
+    // Comment out this response below
+
     const response = {
       userId: 'xxx',
       userName: 'someUser',
@@ -27,7 +29,9 @@ describe('02-saving-time', () => {
         }
       }
     };
-
+    
+    // Uncomment out this response below
+    
     // const response = {
     //   userId: 'xxx',
     //   userName: 'someUser',
