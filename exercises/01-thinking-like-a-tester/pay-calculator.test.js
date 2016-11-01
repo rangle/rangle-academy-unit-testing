@@ -7,7 +7,7 @@ describe('function calculatePay', function() {
   // Assume 8 hour work days
   // Assume time and a half pay on holidays
 
-  it ('calculates the total pay given the num days worked at a given hourly wage', function() {
+  it ('calculates the total pay given the number of days worked at a given hourly wage', function() {
     const hourlyWage = 15;
     const numDaysWorked = 10;
 
@@ -31,6 +31,15 @@ describe('function calculatePay', function() {
 
    *   const expected = 0;
    *   const actual = calculatePay(hourlyWage);
+   *   expect(actual).to.equal(expected);
+   * });*/
+
+  /* it('returns zero if the hourlyWage is negative', function() {
+   *   const hourlyWage = -1;
+   *   const numDaysWorked = 10;
+
+   *   const expected = 0;
+   *   const actual = calculatePay(hourlyWage, numDaysWorked);
    *   expect(actual).to.equal(expected);
    * });*/
 
