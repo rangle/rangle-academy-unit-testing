@@ -21,8 +21,7 @@
     "babel-register": "^6.11.6",
     "chai": "^3.5.0",
     "mocha": "^3.0.2",
-    "nyc": "^7.1.0",
-    "ramda": "^0.22.1"
+    "nyc": "^7.1.0"
   },
   "author": "Neil Fenton <neilff@gmail.com> (https://www.github.com/neilff)",
   "license": "ISC"
