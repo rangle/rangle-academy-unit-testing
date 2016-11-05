@@ -1,5 +1,3 @@
-import R from 'ramda';
-
 /**
  * Tasks:
  *
@@ -28,11 +26,11 @@ import R from 'ramda';
  */
 const rbacSelector = (userResponse, { allRequired, notRequired, anyRequired }) => {
   function checkValid(check, value) {
-    const resource = R.head(check);
-    const privilege = R.tail(check);
+    const resource = check[0];
+    const privilege = check[1];
 
     // Assume false until proven otherwise
-    return R.pathOr(false, ['permissions', resource, privilege], userResponse) === value;
+    return userResponse.permissions[resource][privilege] === value;
   }
 
   const result = [
