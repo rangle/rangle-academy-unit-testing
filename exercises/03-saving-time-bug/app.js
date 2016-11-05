@@ -13,7 +13,13 @@
  * - What other tests could we perform against this code?
  */
 
-export const deviceHealth = (config, value) => {
+export const deviceHealth = (value) => {
+  const config = {
+    GOOD: { min: 0, max: 30 },
+    WARN: { min: 31, max: 60 },
+    CRITICAL: { min: 61, max: 100 },
+  };
+
   let level = 'NULL';
 
   if (value > config.GOOD.min && value < config.GOOD.max) {
@@ -29,36 +35,4 @@ export const deviceHealth = (config, value) => {
     level,
     value,
   };
-}
-
-const runRule = () => {
-  const defaultConfig = {
-    GOOD: { min: 0, max: 30 },
-    WARN: { min: 31, max: 60 },
-    CRITICAL: { min: 61, max: 100 },
-  };
-
-  let cpuUsage = Math.floor(Math.random() * 100, 2);
-  let result  = deviceHealth(defaultConfig, cpuUsage);
-
-  console.log('Device Health is', result);
-}
-
-export const run = () => {
-  const MAX_RUN = 25;
-  let currentRun = 0;
-
-  const runner = setInterval(() => {
-    try {
-      runRule();
-    } catch (e) {
-      console.log('Error!')
-    }
-
-    currentRun++;
-
-    if (currentRun >= MAX_RUN) {
-      clearInterval(runner);
-    }
-  }, 1);
-}
+};
