@@ -12,7 +12,9 @@
     "tdd:01": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./exercises/01-thinking-like-a-tester/**/*.test.js -w",
     "tdd:02": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./exercises/02-saving-time-mock-api/**/*.test.js -w",
     "tdd:03": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./exercises/03-saving-time-bug/**/*.test.js -w",
-    "tdd:04": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./exercises/04-tests-for-better-code/**/*.test.js -w"
+    "tdd:04": "env NODE_ENV='test' mocha --compilers js:babel-core/register ./exercises/04-tests-for-better-code/**/*.test.js -w",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "babel-core": "^6.13.2",
@@ -21,8 +23,10 @@
     "babel-register": "^6.11.6",
     "chai": "^3.5.0",
     "mocha": "^3.0.2",
-    "nyc": "^7.1.0"
+    "nyc": "^7.1.0",
+    "snyk": "^1.316.1"
   },
   "author": "Neil Fenton <neilff@gmail.com> (https://www.github.com/neilff)",
-  "license": "ISC"
+  "license": "ISC",
+  "snyk": true
 }
